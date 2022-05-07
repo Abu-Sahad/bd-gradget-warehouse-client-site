@@ -12,7 +12,7 @@ const Items = () => {
 
             <div className='card-container container'>
                 {
-                    items.slice(0, 6).map(item => <Card key={item._id} item={item} />)
+                    items.map(item => <Card key={item._id} item={item} />)
                 }
             </div>
         </div>

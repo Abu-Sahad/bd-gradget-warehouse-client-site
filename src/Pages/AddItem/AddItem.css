@@ -1,0 +1,10 @@
+.add-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-item-form input{
+    margin: 10px 0px;
+    display: block;
+}

@@ -20,7 +20,9 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
-
+    if (user) {
+        navigate('/');
+    }
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
@@ -39,9 +41,7 @@ const Register = () => {
 
         await updateProfile({ displayName: name });
         toast('verification email')
-        if (user) {
-            navigate('/home');
-        }
+        
 
 
     }
