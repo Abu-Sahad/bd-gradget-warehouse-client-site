@@ -1,6 +1,10 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './AddItem.css'
 const AddItem = () => {
+    const [user] = useAuthState(auth)
+    const email = user.email
     const handleSubmit = e =>{
         e.preventDefault()
         const name = e.target.name.value
@@ -9,7 +13,7 @@ const AddItem = () => {
         const image = e.target.image.value
         const description = e.target.description.value
         const supplierName = e.target.supplierName.value
-        const item = {name,price,quantity,image,supplierName,description}
+        const item = {name,price,quantity,image,supplierName,description,email}
 
         fetch('http://localhost:5000/laptop',{
             method:'POST',
