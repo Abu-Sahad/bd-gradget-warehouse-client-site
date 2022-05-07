@@ -1,9 +1,14 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, ToastContainer } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 let errorElement
 
 const Register = () => {
@@ -19,6 +24,9 @@ const Register = () => {
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
+    if (loading || updating) {
+        return <Loading></Loading>
+    }
     const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -30,7 +38,11 @@ const Register = () => {
         }
 
         await updateProfile({ displayName: name });
-        navigate('/home');
+        toast('verification email')
+        if (user) {
+            navigate('/home');
+        }
+
 
     }
     const navigateLogin = () => {
@@ -65,6 +77,7 @@ const Register = () => {
             {errorElement}
             <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
             <SocialLogin></SocialLogin>
+            <ToastContainer />
         </div>
     );
 };
