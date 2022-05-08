@@ -68,11 +68,11 @@ const SingleItem = () => {
                 .then(() => {
 
                     setReload(!reload)
-                    window.alert(' delevered seccessful')
+                    alert(' delevered seccessful')
                 })
         }
         else {
-            window.alert('Stock Out item')
+            alert('Stock Out item')
         }
 
     }
