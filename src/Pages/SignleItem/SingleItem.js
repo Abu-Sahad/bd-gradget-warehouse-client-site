@@ -79,7 +79,7 @@ const SingleItem = () => {
     const { name, price, image, _id, supplierName, quantity } = item
 
     return (
-        <div className='single-card-container'>
+        <div className='single-card-container mb-5'>
 
             <div className='single-card'>
                 <img src={image} alt="" />
@@ -91,10 +91,10 @@ const SingleItem = () => {
 
                 <form onSubmit={handleSubmit}>
                     <input type="number" name='quantity' placeholder='Add quantity' /> <br />
-                    <button type='submit'>Update  Quantity</button>
+                    <button className='mt-2 mb-2' type='submit'>Update  Quantity</button>
 
                 </form>
-                <button onClick={handleDelever}>Delevered</button>
+                <button className='mb-5' onClick={handleDelever}>Delevered</button>
             </div>
 
 

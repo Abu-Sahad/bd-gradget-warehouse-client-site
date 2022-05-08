@@ -12,6 +12,7 @@ import MyItem from './Pages/MyItem/MyItem';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import NotFound from './Shared/NotFound/NotFound';
 import Footer from './Shared/Footer/Footer';
+import Blogs from './Pages/Home/Blogs/Blogs';
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path='/laptop/:id' element={<SingleItem></SingleItem>} />
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path='add-item' element={<RequireAuth>

@@ -1,0 +1,10 @@
+.information-link a {
+    text-decoration: none;
+    display: flex;
+    color: white;
+}
+
+.footer-main {
+    color: white;
+    background-color: black;
+}

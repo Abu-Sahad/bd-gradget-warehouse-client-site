@@ -6,10 +6,6 @@ import './Card.css'
 const Card = ({ item }) => {
 
     const { name, description, price, image, _id, supplierName, quantity } = item
-    const handleUpdate = id => {
-
-    }
-
     const navigate = useNavigate()
 
 
