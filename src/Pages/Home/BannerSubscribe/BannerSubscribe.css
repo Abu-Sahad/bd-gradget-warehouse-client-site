@@ -1,0 +1,16 @@
+.button {
+    padding: 10px 30px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+}
+
+.subcribeText {
+    color: white;
+}

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Card.css'
 
 const Card = ({ item }) => {
-   
+
     const { name, description, price, image, _id, supplierName, quantity } = item
     const handleUpdate = id => {
 
@@ -22,7 +22,7 @@ const Card = ({ item }) => {
                 <p>Price:{price}</p>
                 <p>Quantity:{quantity}</p>
                 <p>Supplier : {supplierName}</p>
-                <p> description : {description}</p>
+                <p> description : {description.slice(0, 120)}....</p>
                 <button onClick={() => navigate(`/laptop/${_id}`)}>Update</button>
             </div>
 

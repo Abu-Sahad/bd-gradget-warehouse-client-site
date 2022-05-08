@@ -10,6 +10,8 @@ import AddItem from './Pages/AddItem/AddItem';
 import ManageItem from './Pages/ManageItem/ManageItem';
 import MyItem from './Pages/MyItem/MyItem';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import NotFound from './Shared/NotFound/NotFound';
+import Footer from './Shared/Footer/Footer';
 function App() {
   return (
     <div>
@@ -28,8 +30,10 @@ function App() {
         <Route path='myItems' element={<RequireAuth>
           <MyItem></MyItem>
         </RequireAuth>} ></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>
+      <Footer></Footer>
 
     </div>
   );
