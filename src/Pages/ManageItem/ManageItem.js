@@ -7,13 +7,13 @@ const ManageItem = () => {
     const [reload, setReLoad] = useState(false)
     const [items, setItems] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/laptops')
+        fetch('https://nameless-bastion-91628.herokuapp.com/laptops')
             .then(res => res.json())
             .then(data => setItems(data))
 
     }, [reload])
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/laptop/${id}`, {
+        fetch(`https://nameless-bastion-91628.herokuapp.com/laptop/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

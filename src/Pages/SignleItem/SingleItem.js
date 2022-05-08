@@ -8,7 +8,7 @@ const SingleItem = () => {
     const [reload, setReload] = useState(false)
     const { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:5000/laptops/${id}`)
+        fetch(`https://nameless-bastion-91628.herokuapp.com/laptops/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
 
@@ -33,7 +33,7 @@ const SingleItem = () => {
             const updateQuantity = parseInt(item.quantity) + parseInt(quantity)
             const totalQuantity = { quantity: updateQuantity }
 
-            fetch(`http://localhost:5000/laptop/${id}`
+            fetch(`https://nameless-bastion-91628.herokuapp.com/laptop/${id}`
                 , {
                     method: 'PUT',
                     headers: {
@@ -57,7 +57,7 @@ const SingleItem = () => {
             const updateQuantity = parseInt(item.quantity) - 1
             console.log(updateQuantity)
             const totalQuantity = { quantity: updateQuantity }
-            fetch(`http://localhost:5000/laptop/${id}`, {
+            fetch(`https://nameless-bastion-91628.herokuapp.com/laptop/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

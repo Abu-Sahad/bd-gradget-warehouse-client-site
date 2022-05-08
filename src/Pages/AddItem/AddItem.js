@@ -15,7 +15,7 @@ const AddItem = () => {
         const supplierName = e.target.supplierName.value
         const item = { name, price, quantity, image, supplierName, description, email }
 
-        fetch('http://localhost:5000/laptop', {
+        fetch('https://nameless-bastion-91628.herokuapp.com/laptop', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

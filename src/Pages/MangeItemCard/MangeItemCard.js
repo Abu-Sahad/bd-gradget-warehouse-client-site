@@ -19,6 +19,7 @@ const MangeItemCard = ({ item, handleDelete }) => {
                     <Card.Text>
                         <p>Price:{price}</p>
                         <p>Quantity:{quantity}</p>
+                        <p>Description:{description.slice(0, 70)}...</p>
                     </Card.Text>
                     <button className='me-5' onClick={() => handleDelete(_id)}>Delete</button>
                     <button onClick={() => navigate(`/laptop/${_id}`)}>Update</button>

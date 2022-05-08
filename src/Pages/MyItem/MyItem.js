@@ -9,12 +9,12 @@ const MyItem = () => {
     const [user] = useAuthState(auth)
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:5000/myItems?email=${email}`)
+        fetch(`https://nameless-bastion-91628.herokuapp.com/myItems?email=${email}`)
             .then(res => res.json())
             .then(data => setMyItems(data))
-    }, [email])
+    }, [email, reload])
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/laptop/${id}`, {
+        fetch(`https://nameless-bastion-91628.herokuapp.com/laptop/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
